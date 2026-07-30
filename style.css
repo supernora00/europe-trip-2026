@@ -1,4 +1,1 @@
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial;background:#f6f5f2;color:#222}
-.hero{padding:60px 20px;text-align:center;background:#222;color:white}
-.timeline{max-width:800px;margin:auto;padding:30px}
-.content{background:white;margin:20px 0;padding:25px;border-radius:18px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial;background:#f5f4f0;color:#222}.hero{padding:80px 20px;text-align:center;background:#1f2933;color:white}.timeline{max-width:900px;margin:auto;padding:30px}.card{background:white;border-radius:20px;padding:28px;margin:25px 0;box-shadow:0 8px 25px rgba(0,0,0,.08)}a{color:#333}h1{font-size:42px}
