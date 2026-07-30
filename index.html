@@ -2,23 +2,32 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Journey OS Europe 2026</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
+
+<header>
 <h1>Journey OS</h1>
 <h2>Europe 2026</h2>
 <p>🇨🇭 Switzerland · ⛰ Dolomites · 🇮🇹 Italy</p>
-<p>08.24 — 09.10 · Solo Journey</p>
 </header>
 
-<section class="timeline">
-<div class="card"><h2>🇨🇭 Switzerland</h2><p>08.24 Geneva<br>08.25 Grindelwald<br>08.26 First<br>08.27 Skywings + Lauterbrunnen<br>08.28 Lake Brienz + Lucerne</p><a href="pages/switzerland.html">Explore →</a></div>
-<div class="card"><h2>⛰ Dolomites</h2><p>08.30 — 09.05<br>6 Days Hiking Tour<br>Mountain Photography</p><a href="pages/dolomites.html">Explore →</a></div>
-<div class="card"><h2>🇮🇹 Italy</h2><p>Venice · Florence · Rome<br>Art · History · Food</p><a href="pages/italy.html">Explore →</a></div>
-<div class="card"><h2>🎒 Travel Kit</h2><p>Zpacks Arc Haul 60<br>Nikon Z8 + 24-120<br>Ricoh GR4</p></div>
+<nav class="menu">
+<button data-country="swiss">🇨🇭 Switzerland</button>
+<button data-country="dolomites">⛰ Dolomites</button>
+<button data-country="italy">🇮🇹 Italy</button>
+</nav>
+
+<section class="days">
+<button class="day active" data-day="0827">08.27 🪂</button>
+<button class="day" data-day="0828">08.28 🏊</button>
+<button class="day" data-day="0826">08.26 🏔</button>
 </section>
+
+<main id="content"></main>
+
+<script src="app.js"></script>
 </body>
 </html>
