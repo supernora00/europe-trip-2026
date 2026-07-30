@@ -1,45 +1,40 @@
 
-const plans={
-0827:{
-title:"🪂 Skywings Paragliding + Lauterbrunnen",
-cards:[
-["Priority","⭐⭐⭐⭐⭐ Highlight Experience"],
-["Morning","Interlaken Skywings Tandem Flight"],
-["Afternoon","Lauterbrunnen · Staubbach Falls · Mürren Option"],
-["Weather","🟡 Check wind and visibility"]
-]
-},
-0828:{
-title:"🏊 Brienzersee Lake Day + Lucerne",
-cards:[
-["Route","Grindelwald → Iseltwald / Brienz"],
-["Experience","Lake swimming · Mountain lake views"],
-["Evening","Lucerne Old Town"]
-]
-},
-0826:{
+const data={
+"0826":{
 title:"🏔 First Mountain",
-cards:[
-["Transport","Grindelwald → First Cable Car"],
-["Hiking","Bachalpsee Trail"],
-["Photography","Reflection lake · Cliff Walk"]
-]
-}
+items:[
+["🚆 Transport","Grindelwald Terminal → First 缆车"],
+["🥾 Hiking","First → Bachalpsee 往返约6km，2-3小时"],
+["📷 Photography","Bachalpsee倒影、First Cliff Walk"],
+["Tips","上午云量较少，适合拍摄"]
+]},
+"0827":{
+title:"🪂 Skywings Paragliding",
+items:[
+["Priority","⭐⭐⭐⭐⭐ Highlight Experience"],
+["Schedule","08:30 集合，因特拉肯双人滑翔伞"],
+["Route","下午 Lauterbrunnen · Staubbach Falls · Mürren"],
+["Weather","风雨天气取消，少女峰作为备选"]
+]},
+"0828":{
+title:"🏊 Brienzersee + Lucerne",
+items:[
+["Route","Grindelwald → Iseltwald / Brienz"],
+["Experience","湖边游泳、雪山湖景"],
+["Evening","前往卢塞恩，老城散步"],
+["Checklist","泳衣 ☑ 毛巾 ☑ 相机 ☑"]
+]}
 };
 
 function render(day){
-let item=plans[day];
-document.getElementById("content").innerHTML=
-`<div class="card"><h2>${item.title}</h2></div>`+
-item.cards.map(c=>`<div class="card"><h3>${c[0]}</h3><p>${c[1]}</p></div>`).join("");
+let d=data[day];
+document.querySelector("#app").innerHTML=
+`<div class="card"><h2>${d.title}</h2>
+${d.items.map((x,i)=>`
+<button onclick="toggle(${i})">${x[0]} ▼</button>
+<div class="detail" id="d${i}">${x[1]}</div>`).join("")}
+</div>`;
 }
-
-document.querySelectorAll(".day").forEach(btn=>{
-btn.onclick=()=>{
-document.querySelectorAll(".day").forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-render(btn.dataset.day);
-}
-});
-
+function toggle(i){document.getElementById("d"+i).classList.toggle("open")}
+document.querySelectorAll("button[data-day]").forEach(b=>b.onclick=()=>render(b.dataset.day));
 render("0827");
