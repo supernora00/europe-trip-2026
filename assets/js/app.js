@@ -30,3 +30,14 @@ const fab=$('.quick-fab'),qa=$('.quick-access');if(fab&&qa){fab.addEventListener
 $$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{$$('[data-mode]').forEach(x=>x.classList.remove('active'));$$('[data-panel]').forEach(x=>x.classList.remove('active'));b.classList.add('active');const p=$(`[data-panel="${b.dataset.mode}"]`);if(p)p.classList.add('active')}));
 $$('[data-check]').forEach(c=>{const key='nora-check-'+location.pathname+'-'+c.dataset.check;c.checked=localStorage.getItem(key)==='1';c.addEventListener('change',()=>localStorage.setItem(key,c.checked?'1':'0'))});
 const tripCurrent=document.querySelector(`.trip-row[data-day="${currentDay()}"]`);if(tripCurrent)tripCurrent.classList.add('current');
+
+function applyDayNavActive(){
+ const body=document.body;
+ if(!body||body.dataset.page!=='day') return;
+ const day=Number(body.dataset.day);
+ document.querySelectorAll('.travel-strip a').forEach(a=>{
+   a.classList.remove('current');
+   const m=a.textContent.match(/Day (\d+)/);
+   if(m && Number(m[1])===day) a.classList.add('current');
+ });
+}
