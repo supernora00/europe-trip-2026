@@ -1,7 +1,7 @@
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
 const start=new Date('2026-08-21T00:00:00'),end=new Date('2026-09-10T23:59:59');
 function currentDay(){const n=new Date();if(n<start)return 1;if(n>end)return 21;return Math.min(21,Math.max(1,Math.floor((n-start)/86400000)+1))}
-const dayPaths=['','paris/day1.html','paris/day2.html','paris/day3.html','switzerland/day4.html','switzerland/day5.html','switzerland/day6.html','switzerland/day7.html','switzerland/day8.html','switzerland/day9.html','italy/day10.html','italy/day11.html','italy/day12.html','italy/day13.html','italy/day14.html','italy/day15.html','italy/day16.html','italy/day17.html','italy/day18.html','italy/day19.html','italy/day20.html','italy/day21.html'];
+const dayPaths=['','paris/day1.html','paris/day2.html','paris/day3.html','switzerland/day1.html','switzerland/day2.html','switzerland/day3.html','switzerland/day4.html','switzerland/day5.html','switzerland/day6.html','italy/day7.html','italy/day8.html','italy/day9.html','italy/day10.html','italy/day11.html','italy/day12.html','italy/day13.html','italy/day14.html','italy/day15.html','italy/day16.html','italy/day17.html','italy/day18.html'];
 const dashboard={
 1:['Paris · Arrival','8月21日','卢浮宫博物馆','8月21日 · 15:30','Hotel de Fleurie','Paris · Saint-Germain','卢浮宫夜场与玻璃金字塔','Z8 24–120 / GR IV'],
 2:['Paris · Musée d’Orsay','8月22日','奥赛博物馆','8月22日 · 10:30','Hotel de Fleurie','Paris · Saint-Germain','奥赛大钟与塞纳河线条','GR IV / Z8 24–120'],
